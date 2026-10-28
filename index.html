@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProgressWay Logistics | Shipping & Tracking</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #183047;
+      background: #f4f7fb;
+    }
+    header {
+      background: #102b46;
+      color: white;
+      padding: 24px 18px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 8px; }
+    nav { margin-top: 18px; }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .hero {
+      padding: 45px 20px;
+      text-align: center;
+      background: #e1edf8;
+    }
+    .hero h2 { font-size: 30px; }
+    .tracking {
+      max-width: 550px;
+      margin: 25px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px #00000010;
+    }
+    input, button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    input { border: 1px solid #bdc9d6; }
+    button {
+      border: 0;
+      background: #e5a52b;
+      color: #102b46;
+      font-weight: bold;
+    }
+    #result { margin-top: 15px; }
+    .services {
+      padding: 25px 20px;
+      text-align: center;
+    }
+    .service {
+      background: white;
+      padding: 18px;
+      margin: 12px auto;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+    footer {
+      background: #102b46;
+      color: white;
+      padding: 22px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ProgressWay Logistics</h1>
+    <p>Moving Your World Forward</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Our Services</a>
+      <a href="#tracking">Track Package</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Reliable Shipping. Simple Tracking.</h2>
+    <p>Helping your packages move with confidence.</p>
+  </section>
+
+  <section class="tracking" id="tracking">
+    <h2>Track Your Package</h2>
+    <p>Enter your tracking number below.</p>
+    <form id="trackForm">
+      <input id="trackingNumber" type="text"
+        placeholder="Enter tracking number" required>
+      <button type="submit">Track Package</button>
+    </form>
+    <div id="result"></div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service">
+      <h3>Domestic Shipping</h3>
+      <p>Shipping services for deliveries within the country.</p>
+    </div>
+    <div class="service">
+      <h3>International Shipping</h3>
+      <p>Shipping support for destinations around the world.</p>
+    </div>
+    <div class="service">
+      <h3>Package Tracking</h3>
+      <p>A simple way to check a shipment reference.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>ProgressWay Logistics</p>
+    <p>Contact our team for shipping enquiries.</p>
+    <p>&copy; 2026 ProgressWay Logistics</p>
+  </footer>
+
+  <script>
+    document.getElementById("trackForm").addEventListener("submit",
+      function(event) {
+        event.preventDefault();
+        const number = document.getElementById("trackingNumber")
+          .value.trim();
+        document.getElementById("result").textContent =
+          "Tracking number " + number +
+          " has been entered. Live shipment status is not connected yet.";
+      });
+  </script>
+</body>
+</html>
